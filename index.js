@@ -2,6 +2,8 @@ const proxy = require('express-http-proxy');
 const app = require('express')();
 const cors = require('cors');
 const { host, port = 9000 } = require('minimist')(process.argv.slice(2));
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 
 app.use(cors());
 
