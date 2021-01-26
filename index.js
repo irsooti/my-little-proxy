@@ -7,7 +7,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 app.use(cors());
 
-app.use('/', proxy(host));
+app.use('/', proxy(host, { limit: '200mb' }));
 
 app.listen(port, () => {
   console.log(`Proxy server for ${host} listening on port ${port}`);
